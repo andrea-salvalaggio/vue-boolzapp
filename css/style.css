@@ -26,6 +26,10 @@ header {
     background-color: #8edafc;
 }
 
+.icon-chat-bg {
+    background-color: #f3eeea;
+}
+
 .user-top img,
 .user-list img {
     width: 50px;
@@ -65,4 +69,9 @@ header {
 .text-notification {
     font-size: 15px;
     text-decoration: underline;
+}
+
+.pattern-bg {
+    height: calc(100% - 156px);
+    background-image: url("../img/mine.jpg");
 }
