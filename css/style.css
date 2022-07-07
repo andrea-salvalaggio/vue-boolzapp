@@ -20,6 +20,10 @@ header {
     background-color: #eaeaea;
 }
 
+.container-notification {
+    background-color: #8edafc;
+}
+
 .user-top img {
     width: 50px;
     border-radius: 50%;
@@ -36,4 +40,21 @@ header {
 
 .info-content {
     width: 300px;
+    line-height: 20px;
+}
+
+.notification-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.notification-icon i {
+    color: #8edafc;
+}
+
+.text-notification {
+    font-size: 15px;
+    text-decoration: underline;
 }
