@@ -170,6 +170,14 @@ const app = new Vue(
 
         },
 
+        methods: {
+
+            // immagine di ogni contatto presente nella struttura dati consegnata.
+            getAvatar: function (contact) {
+                return 'img/avatar' + contact.avatar + '.jpg';
+            },
+
+        }
     }
 
 );

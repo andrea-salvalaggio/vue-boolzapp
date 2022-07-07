@@ -16,7 +16,8 @@ header {
 }
 
 /* Main - Top */
-.top-container {
+.top-container,
+.input-bg {
     background-color: #eaeaea;
 }
 
@@ -24,7 +25,8 @@ header {
     background-color: #8edafc;
 }
 
-.user-top img {
+.user-top img,
+.user-list img {
     width: 50px;
     border-radius: 50%;
 }

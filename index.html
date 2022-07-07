@@ -26,7 +26,9 @@
 
 <body>
 
-    <header></header>
+    <header>
+
+    </header>
 
     <main>
         <div id="root">
@@ -46,23 +48,37 @@
                             </div>
                         </div>
 
+                        <!-- Notification box -->
                         <div class="container-notification d-flex p-3">
                             <div class="notification-icon d-flex justify-content-center align-items-center fs-5">
                                 <i class="fa-solid fa-bell-slash"></i>
                             </div>
-                            <div class="info-content d-flex flex-column justify-content-center">
-                                <span class="ps-2">Ricevi notifiche di nuovi messaggi</span>
-                                <span class="text-notification text-black-50 ps-2">Attiva notifica desktop</span>
+                            <div class="info-content d-flex flex-column justify-content-center ps-2">
+                                <span>Ricevi notifiche di nuovi messaggi</span>
+                                <span class="text-notification text-black-50">Attiva notifica desktop</span>
                             </div>
                         </div>
 
-                        <div class="input-group p-2">
+                        <!-- Reserch chat box -->
+                        <div class="input-group input-bg p-2">
                             <span class="input-group-text rounded-0 bg-white" id="inputGroup-sizing-default"><i
                                     class="fa-solid fa-magnifying-glass"></i></span>
                             <input type="text" class="form-control border rounded-0" aria-label="Sizing example input"
                                 aria-describedby="inputGroup-sizing-default"
                                 placeholder="Cerca o inizia una nuova chat">
                         </div>
+
+                        <!-- Contact list -->
+                        <ul class="list-unstyled">
+                            <li v-for="contact in contacts" class="user-list d-flex border-bottom p-3">
+                                <img :src=" 'img/avatar' + contact.avatar + '.jpg' " :alt="contact.name">
+                                <div class="d-flex flex-column justify-content-center ps-3">
+                                    <span class="fs-5"> {{ contact.name }}</span>
+                                    <span class="text-black-50">Ultimo messaggio inviato</span>
+                                </div>
+
+                            </li>
+                        </ul>
 
                     </div>
                     <div class="col-12 col-lg-7 p-0">
