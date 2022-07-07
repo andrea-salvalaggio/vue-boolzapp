@@ -75,3 +75,29 @@ header {
     height: calc(100% - 156px);
     background-image: url("../img/mine.jpg");
 }
+
+.chat-container {
+    width: 650px;
+    margin: 0 auto;
+}
+
+.chat-send {
+    width: 300px;
+    background-color: #d5f9ba;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.chat-receive {
+    width: 300px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.hour {
+    text-align: end;
+    font-size: 10px;
+}
