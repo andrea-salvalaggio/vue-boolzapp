@@ -32,9 +32,11 @@
 
     <main>
         <div id="root">
-            <div class="container">
+            <div class="container position-absolute top-50 start-50 translate-middle">
                 <div class="row bg-light">
                     <div class="col-12 col-lg-5 p-0">
+
+                        <!-- User box -->
                         <div
                             class="top-container d-flex justify-content-between align-items-center border-end border-2 p-3">
                             <div class="user-top d-flex align-items-center">
@@ -53,7 +55,7 @@
                             <div class="notification-icon d-flex justify-content-center align-items-center fs-5">
                                 <i class="fa-solid fa-bell-slash"></i>
                             </div>
-                            <div class="info-content d-flex flex-column justify-content-center ps-2">
+                            <div class="info-content d-flex flex-column justify-content-center ps-3">
                                 <span>Ricevi notifiche di nuovi messaggi</span>
                                 <span class="text-notification text-black-50">Attiva notifica desktop</span>
                             </div>
@@ -69,14 +71,16 @@
                         </div>
 
                         <!-- Contact list -->
-                        <ul class="list-unstyled">
+                        <ul class="list-unstyled m-0">
                             <li v-for="contact in contacts" class="user-list d-flex border-bottom p-3">
                                 <img :src=" 'img/avatar' + contact.avatar + '.jpg' " :alt="contact.name">
-                                <div class="d-flex flex-column justify-content-center ps-3">
+                                <div class="info-content d-flex flex-column justify-content-center ps-3">
                                     <span class="fs-5"> {{ contact.name }}</span>
                                     <span class="text-black-50">Ultimo messaggio inviato</span>
                                 </div>
-
+                                <div class="d-flex">
+                                    <span class="text-black-50">12:00</span>
+                                </div>
                             </li>
                         </ul>
 
@@ -85,9 +89,9 @@
                         <div class="top-container d-flex justify-content-between align-items-center p-3">
                             <div class="user-top d-flex align-items-center">
                                 <img src="img/avatar_1.jpg" alt="Avatar Michele">
-                                <div class="info-content d-flex flex-column justify-content-center">
+                                <div class="info-content d-flex flex-column">
                                     <span class="ps-2">Michele</span>
-                                    <span class="text-black-50 ps-2">Ultimo accesso oggi alle 12:00</span>
+                                    <span class="online-info text-black-50 ps-2">Ultimo accesso oggi alle 12:00</span>
                                 </div>
                             </div>
                             <div class="top-icon text-end fs-5">
