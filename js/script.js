@@ -6,6 +6,7 @@ const app = new Vue(
 
             activeIndex: 0,
             newMessage: '',
+            autoMessage: 'OK',
 
             contacts: [
                 {
@@ -190,18 +191,37 @@ const app = new Vue(
                 return 'img/avatar' + this.contacts[index].avatar + '.jpg';
             },
 
-            // l’utente scrive un testo nella parte bassa e digitando
-            // “enter” il testo viene aggiunto al thread sopra, come messaggio verde
-
             addMessage: function () {
                 this.contacts[this.activeIndex].messages.push({
                     date: '10/01/2020 15:30:55',
                     message: this.newMessage,
-                    status: 'sent'
+                    status: 'sent',
                 });
                 this.newMessage = '';
 
             },
-        }
+
+            // ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo
+
+            addMessageAuto: function () {
+                setInterval(() => {
+                    this.contacts[this.activeIndex].messages.push({
+                        date: '10/01/2020 15:30:55',
+                        message: this.autoMessage,
+                        status: 'received',
+                    });
+                }, 1000);
+            },
+
+            stopAutoMessage: function () {
+                clearInterval(this.autoMessage);
+            },
+
+        },
+
+        // created() {
+        //     this.addMessageAuto();
+        // },
+
     }
 );
