@@ -174,7 +174,10 @@ const app = new Vue(
 
         methods: {
 
-
+            // mostra la conversazione del contatto cliccato
+            showChatMessage: function (index) {
+                this.activeIndex = index;
+            },
 
         },
     }

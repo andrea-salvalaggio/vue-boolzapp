@@ -74,7 +74,7 @@
 
                         <!-- Contact list -->
                         <ul class="list-unstyled m-0">
-                            <li @click="chatMessageActive" v-for="contact in contacts"
+                            <li @click="showChatMessage(index)" v-for="(contact, index) in contacts"
                                 class="user-list d-flex border-bottom p-3">
                                 <img :src=" 'img/avatar' + contact.avatar + '.jpg' " :alt="contact.name">
                                 <div class="info-content d-flex flex-column justify-content-center ps-3">
