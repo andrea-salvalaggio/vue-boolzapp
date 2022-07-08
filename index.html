@@ -79,7 +79,7 @@
                                 <img :src=" 'img/avatar' + contact.avatar + '.jpg' " :alt="contact.name">
                                 <div class="info-content d-flex flex-column justify-content-center ps-3">
                                     <span> {{ contact.name }} </span>
-                                    <span class="text-black-50">Ultimo messaggio inviato</span>
+                                    <span class="text-black-50"> {{ lastMessage(index) }} </span>
                                 </div>
                                 <div class="d-flex">
                                     <span class="text-black-50">12:00</span>

@@ -174,10 +174,15 @@ const app = new Vue(
 
         methods: {
 
-            // mostra la conversazione del contatto cliccato
             showChatMessage: function (index) {
                 this.activeIndex = index;
             },
+
+            lastMessage(index) {
+                let lengthMessage = (this.contacts[index].messages.length) - 1;
+                return this.contacts[index].messages[lengthMessage].message;
+            },
+
 
         },
     }

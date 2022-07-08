@@ -89,6 +89,7 @@ header {
 .chat-send {
     display: flex;
     flex-direction: column;
+    align-self: flex-end;
     width: 250px;
     background-color: #d5f9ba;
     padding: 10px;
@@ -100,6 +101,7 @@ header {
 .chat-receive {
     display: flex;
     flex-direction: column;
+    align-self: flex-start;
     width: 250px;
     background-color: #fff;
     padding: 10px;
