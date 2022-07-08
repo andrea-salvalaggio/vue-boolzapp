@@ -4,6 +4,8 @@ const app = new Vue(
         el: '#root',
         data: {
 
+            activeIndex: 0,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -172,12 +174,9 @@ const app = new Vue(
 
         methods: {
 
-            // immagine di ogni contatto presente nella struttura dati consegnata.
-            getAvatar: function (contact) {
-                return 'img/avatar' + contact.avatar + '.jpg';
-            },
 
-        }
+
+        },
     }
 
 );

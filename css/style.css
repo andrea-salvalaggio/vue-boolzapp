@@ -81,6 +81,11 @@ header {
     margin: 0 auto;
 }
 
+.chat-box {
+    display: flex;
+    flex-direction: column;
+}
+
 .chat-send {
     display: flex;
     flex-direction: column;
@@ -89,6 +94,7 @@ header {
     padding: 10px;
     border-radius: 10px;
     font-size: 15px;
+    margin: 5px 0;
 }
 
 .chat-receive {

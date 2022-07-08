@@ -74,7 +74,8 @@
 
                         <!-- Contact list -->
                         <ul class="list-unstyled m-0">
-                            <li v-for="contact in contacts" class="user-list d-flex border-bottom p-3">
+                            <li @click="chatMessageActive" v-for="contact in contacts"
+                                class="user-list d-flex border-bottom p-3">
                                 <img :src=" 'img/avatar' + contact.avatar + '.jpg' " :alt="contact.name">
                                 <div class="info-content d-flex flex-column justify-content-center ps-3">
                                     <span> {{ contact.name }} </span>
@@ -108,22 +109,12 @@
                         </div>
 
                         <!-- Chat box -->
-                        <div class="pattern-bg">
-                            <div class="chat-container p-5">
-                                <div class="d-flex flex-column align-items-end">
-                                    <div class="chat-send d-flex flex-column">
-                                        <span>Hai portato a spasso il cane?</span>
-                                        <span class="hour text-black-50">15:30</span>
-                                    </div>
-                                    <div class="chat-send d-flex flex-column mt-2">
-                                        <span>Ricordati di stendere i panni</span>
-                                        <span class="hour text-black-50">15:40</span>
-                                    </div>
-                                </div>
-                                <div class="d-flex flex-column align-items-start">
-                                    <div class="chat-receive d-flex flex-column">
-                                        <span>Tutto fatto!</span>
-                                        <span class="hour text-black-50">16:15</span>
+                        <div class="pattern-bg d-flex">
+                            <div class="chat-container p-4">
+                                <div class="chat-box">
+                                    <div v-for="element in contacts[activeIndex].messages" class="chat-send">
+                                        <span> {{ element.message }} </span>
+                                        <span class="hour text-black-50">{{ element.date }}</span>
                                     </div>
                                 </div>
                             </div>
