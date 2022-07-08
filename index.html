@@ -126,7 +126,7 @@
                                 id="inputGroup-sizing-default"><i class="fa-regular fa-face-smile"></i></span>
                             <input type="text" class="form-control border rounded-2 p-3"
                                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
-                                placeholder="Scrivi un messaggio">
+                                placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addMessage">
                             <span class="input-group-text icon-chat-bg border-0 rounded-0 fs-4"
                                 id="inputGroup-sizing-default"><i class="fa-solid fa-microphone"></i></span>
                         </div>

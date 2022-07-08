@@ -5,6 +5,7 @@ const app = new Vue(
         data: {
 
             activeIndex: 0,
+            newMessage: '',
 
             contacts: [
                 {
@@ -172,6 +173,7 @@ const app = new Vue(
 
         },
 
+
         methods: {
 
             showChatMessage: function (index,) {
@@ -188,11 +190,18 @@ const app = new Vue(
                 return 'img/avatar' + this.contacts[index].avatar + '.jpg';
             },
 
+            // l’utente scrive un testo nella parte bassa e digitando
+            // “enter” il testo viene aggiunto al thread sopra, come messaggio verde
 
+            addMessage: function () {
+                this.contacts[this.activeIndex].messages.push({
+                    date: '10/01/2020 15:30:55',
+                    message: this.newMessage,
+                    status: 'sent'
+                });
+                this.newMessage = '';
 
-
-
-        },
+            },
+        }
     }
-
 );
