@@ -82,7 +82,9 @@ header {
 }
 
 .chat-send {
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
     background-color: #d5f9ba;
     padding: 10px;
     border-radius: 10px;
@@ -90,7 +92,9 @@ header {
 }
 
 .chat-receive {
-    width: 300px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
     background-color: #fff;
     padding: 10px;
     border-radius: 10px;
@@ -100,4 +104,9 @@ header {
 .hour {
     text-align: end;
     font-size: 10px;
+}
+
+.user-list:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
