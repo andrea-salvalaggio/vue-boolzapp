@@ -5,6 +5,7 @@ const app = new Vue(
         data: {
 
             activeIndex: 0,
+            index: 0,
 
             contacts: [
                 {
@@ -174,7 +175,7 @@ const app = new Vue(
 
         methods: {
 
-            showChatMessage: function (index) {
+            showChatMessage: function (index,) {
                 this.activeIndex = index;
             },
 
@@ -182,6 +183,12 @@ const app = new Vue(
                 let lengthMessage = (this.contacts[index].messages.length) - 1;
                 return this.contacts[index].messages[lengthMessage].message;
             },
+
+            addImgProfile: function (index) {
+                return 'img/avatar' + this.contacts[index].avatar + '.jpg';
+            },
+
+
 
 
         },

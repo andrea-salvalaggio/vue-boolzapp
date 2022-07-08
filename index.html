@@ -76,7 +76,7 @@
                         <ul class="list-unstyled m-0">
                             <li @click="showChatMessage(index)" v-for="(contact, index) in contacts"
                                 class="user-list d-flex border-bottom p-3">
-                                <img :src=" 'img/avatar' + contact.avatar + '.jpg' " :alt="contact.name">
+                                <img :src="addImgProfile(index)" :alt="contact.name">
                                 <div class="info-content d-flex flex-column justify-content-center ps-3">
                                     <span> {{ contact.name }} </span>
                                     <span class="text-black-50"> {{ lastMessage(index) }} </span>
@@ -94,11 +94,10 @@
                         <!-- User box right-->
                         <div class="top-container d-flex justify-content-between align-items-center p-3">
                             <div class="user-top d-flex align-items-center">
-                                <img src="img/avatar_1.jpg" alt="Avatar Michele">
+                                <img :src="addImgProfile(index)" alt="">
                                 <div class="info-content d-flex flex-column">
-                                    <span class="ps-2">Michele</span>
-                                    <span class="online-info text-black-50 ps-2">Ultimo accesso oggi alle
-                                        12:00</span>
+                                    <span class="ps-2"> {{ contacts[index].name }} </span>
+                                    <span class="online-info text-black-50 ps-2">Ultimo accesso oggi alle 12:00</span>
                                 </div>
                             </div>
                             <div class="top-icon text-end fs-5">
@@ -112,9 +111,10 @@
                         <div class="pattern-bg d-flex">
                             <div class="chat-container p-4">
                                 <div class="chat-box">
-                                    <div v-for="element in contacts[activeIndex].messages" class="chat-send">
+                                    <div v-for="element in contacts[activeIndex].messages"
+                                        :class="{'chat-send' : element.status == 'sent', 'chat-receive' : element.status == 'received'}">
                                         <span> {{ element.message }} </span>
-                                        <span class="hour text-black-50">{{ element.date }}</span>
+                                        <span class=" hour text-black-50">{{ element.date }}</span>
                                     </div>
                                 </div>
                             </div>
