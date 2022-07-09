@@ -6,7 +6,8 @@
 
 /* General */
 body {
-    background-color: #dcdbd2;
+    background: linear-gradient(180deg, #dddbd2, #d2dbdc);
+    background-attachment: fixed;
 }
 
 header {
@@ -107,6 +108,7 @@ header {
     padding: 10px;
     border-radius: 10px;
     font-size: 15px;
+    margin: 5px 0;
 }
 
 .hour {

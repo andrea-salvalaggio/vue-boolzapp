@@ -182,11 +182,11 @@ const app = new Vue(
 
             },
 
-            lastMessage(index) {
+            lastMessage: function (index) {
                 let lengthMessage = (this.contacts[index].messages.length) - 1;
                 return this.contacts[index].messages[lengthMessage].message;
             },
-
+            
             addImgProfile: function (index) {
                 return 'img/avatar' + this.contacts[index].avatar + '.jpg';
             },
@@ -202,7 +202,6 @@ const app = new Vue(
             },
 
             // ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo
-
             addMessageAuto: function () {
                 setInterval(() => {
                     this.contacts[this.activeIndex].messages.push({
@@ -216,6 +215,7 @@ const app = new Vue(
             stopAutoMessage: function () {
                 clearInterval(this.autoMessage);
             },
+
 
         },
 

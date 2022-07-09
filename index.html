@@ -74,7 +74,7 @@
 
                         <!-- Contact list -->
                         <ul class="list-unstyled m-0">
-                            <li @click="showChatMessage(index)" v-for="(contact, index) in contacts"
+                            <li @click="showChatMessage(index)" v-for="(contact, index, date) in contacts"
                                 class="user-list d-flex border-bottom p-3">
                                 <img :src="addImgProfile(index)" :alt="contact.name">
                                 <div class="info-content d-flex flex-column justify-content-center ps-3">
@@ -82,7 +82,7 @@
                                     <span class="text-black-50"> {{ lastMessage(index) }} </span>
                                 </div>
                                 <div class="d-flex">
-                                    <span class="text-black-50">12:00</span>
+                                    <span class="text-black-50"> 12:00 </span>
                                 </div>
                             </li>
                         </ul>
