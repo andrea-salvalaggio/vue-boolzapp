@@ -47,7 +47,7 @@
                         <div
                             class="top-container d-flex justify-content-between align-items-center border-end border-2 p-3">
                             <div class="user-top d-flex align-items-center">
-                                <img :src="addImgProfileUser(index)" alt="Avatar Sofia">
+                                <img :src="addImgProfileUser(activeIndex)" :alt="user.name">
                                 <span class="ps-2"> {{ user.name }}</span>
                             </div>
                             <div class="top-icon text-end fs-5">
@@ -87,7 +87,7 @@
                                     <span class="text-black-50"> {{ lastMessage(index) }} </span>
                                 </div>
                                 <div class="d-flex">
-                                    <span class="text-black-50"> {{ getHour(index) }} </span>
+                                    <span class="text-black-50"> {{ getTime(index) }} </span>
                                 </div>
                             </li>
                         </ul>
@@ -102,7 +102,7 @@
                                 <img :src="addImgProfile(activeIndex)" alt="">
                                 <div class="info-content d-flex flex-column">
                                     <span class="ps-2"> {{ contacts[activeIndex].name }} </span>
-                                    <span class="online-info text-black-50 ps-2">Ultimo accesso oggi alle {{ getHour(activeIndex) }}</span>
+                                    <span class="online-info text-black-50 ps-2">Ultimo accesso oggi alle {{ getTime(activeIndex) }}</span>
                                 </div>
                             </div>
                             <div class="top-icon text-end fs-5">

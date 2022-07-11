@@ -185,7 +185,6 @@ const app = new Vue(
 
             showChatMessage: function (index,) {
                 this.activeIndex = index;
-
             },
 
             lastMessage: function (index) {
@@ -197,7 +196,7 @@ const app = new Vue(
                 return 'img/avatar' + this.contacts[index].avatar + '.jpg';
             },
 
-            addImgProfileUser: function (index) {
+            addImgProfileUser: function () {
                 return 'img/avatar' + this.user.avatar + '.jpg';
             },
 
@@ -209,17 +208,16 @@ const app = new Vue(
                 });
                 this.newMessage = '';
                 this.newDate = '';
-
+                this.addAutoMessage();
             },
 
-            getHour: function (index) {
+            getTime: function (index) {
                 let date = this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
-                let hour = date.substring(11, 16);
-                return hour;
+                let time = date.substring(11, 16);
+                return time;
             },
 
-
-            // ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo
+            // Funzione che aggiunge un messaggio automatico
             addAutoMessage: function () {
                 setTimeout(() => {
                     this.contacts[this.activeIndex].messages.push({
@@ -230,16 +228,7 @@ const app = new Vue(
                 }, 1000);
             },
 
-            // stopAutoMessage: function () {
-            //     clearInterval(this.autoMessage);
-            // },
-
-
         },
-
-        // created() {
-        //     this.addAutoMessage();
-        // },
 
     }
 );
