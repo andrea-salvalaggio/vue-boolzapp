@@ -18,6 +18,11 @@
     <!-- Importing CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Importing Moment JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+    integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+    crossorigin="anonymous"></script>
+
     <!-- Importing Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 
@@ -82,7 +87,7 @@
                                     <span class="text-black-50"> {{ lastMessage(index) }} </span>
                                 </div>
                                 <div class="d-flex">
-                                    <span class="text-black-50"> 12:00 </span>
+                                    <span class="text-black-50"> {{ getHour(index) }} </span>
                                 </div>
                             </li>
                         </ul>
@@ -97,7 +102,7 @@
                                 <img :src="addImgProfile(activeIndex)" alt="">
                                 <div class="info-content d-flex flex-column">
                                     <span class="ps-2"> {{ contacts[activeIndex].name }} </span>
-                                    <span class="online-info text-black-50 ps-2">Ultimo accesso oggi alle 12:00</span>
+                                    <span class="online-info text-black-50 ps-2">Ultimo accesso oggi alle {{ getHour(activeIndex) }}</span>
                                 </div>
                             </div>
                             <div class="top-icon text-end fs-5">
@@ -111,10 +116,10 @@
                         <div class="pattern-bg d-flex">
                             <div class="chat-container p-4">
                                 <div class="chat-box">
-                                    <div v-for="element in contacts[activeIndex].messages"
+                                    <div v-for="(element, index) in contacts[activeIndex].messages"
                                         :class="{'chat-send' : element.status == 'sent', 'chat-receive' : element.status == 'received'}">
                                         <span> {{ element.message }} </span>
-                                        <span class=" hour text-black-50">{{ element.date }}</span>
+                                        <span class=" hour text-black-50">{{ getHour(index) }}</span>
                                     </div>
                                 </div>
                             </div>

@@ -201,8 +201,15 @@ const app = new Vue(
 
             },
 
+            getHour: function (index) {
+                let date = this.contacts[index].messages[this.contacts[index].messages.length - 1].date;
+                let hour = date.substring(11, 16);
+                return hour;
+            },
+
+
             // ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo
-            addMessageAuto: function () {
+            addAutoMessage: function () {
                 setInterval(() => {
                     this.contacts[this.activeIndex].messages.push({
                         date: '10/01/2020 15:30:55',
