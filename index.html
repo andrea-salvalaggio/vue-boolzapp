@@ -47,8 +47,8 @@
                         <div
                             class="top-container d-flex justify-content-between align-items-center border-end border-2 p-3">
                             <div class="user-top d-flex align-items-center">
-                                <img src="img/avatar_io.jpg" alt="Avatar Sofia">
-                                <span class="ps-2">Sofia</span>
+                                <img :src="addImgProfileUser(index)" alt="Avatar Sofia">
+                                <span class="ps-2"> {{ user.name }}</span>
                             </div>
                             <div class="top-icon text-end fs-5">
                                 <i class="fa-solid fa-circle-notch"></i>
@@ -119,7 +119,7 @@
                                     <div v-for="(element, index) in contacts[activeIndex].messages"
                                         :class="{'chat-send' : element.status == 'sent', 'chat-receive' : element.status == 'received'}">
                                         <span> {{ element.message }} </span>
-                                        <span class=" hour text-black-50">{{ getHour(index) }}</span>
+                                        <span class=" hour text-black-50">{{ element.date }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +131,7 @@
                                 id="inputGroup-sizing-default"><i class="fa-regular fa-face-smile"></i></span>
                             <input type="text" class="form-control border rounded-2 p-3"
                                 aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"
-                                placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addMessage">
+                                placeholder="Scrivi un messaggio" v-model.trim="newMessage" @keyup.enter="addMessage">
                             <span class="input-group-text icon-chat-bg border-0 rounded-0 fs-4"
                                 id="inputGroup-sizing-default"><i class="fa-solid fa-microphone"></i></span>
                         </div>

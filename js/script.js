@@ -6,7 +6,13 @@ const app = new Vue(
 
             activeIndex: 0,
             newMessage: '',
+            newDate: '',
             autoMessage: 'OK',
+
+            user: {
+                    name: 'Sofia',
+                    avatar: '_io',
+                },
 
             contacts: [
                 {
@@ -191,13 +197,18 @@ const app = new Vue(
                 return 'img/avatar' + this.contacts[index].avatar + '.jpg';
             },
 
+            addImgProfileUser: function (index) {
+                return 'img/avatar' + this.user.avatar + '.jpg';
+            },
+
             addMessage: function () {
                 this.contacts[this.activeIndex].messages.push({
-                    date: '10/01/2020 15:30:55',
+                    date: this.newDate,
                     message: this.newMessage,
                     status: 'sent',
                 });
                 this.newMessage = '';
+                this.newDate = '';
 
             },
 
@@ -210,24 +221,24 @@ const app = new Vue(
 
             // ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo
             addAutoMessage: function () {
-                setInterval(() => {
+                setTimeout(() => {
                     this.contacts[this.activeIndex].messages.push({
-                        date: '10/01/2020 15:30:55',
+                        date: this.newDate,
                         message: this.autoMessage,
                         status: 'received',
                     });
                 }, 1000);
             },
 
-            stopAutoMessage: function () {
-                clearInterval(this.autoMessage);
-            },
+            // stopAutoMessage: function () {
+            //     clearInterval(this.autoMessage);
+            // },
 
 
         },
 
         // created() {
-        //     this.addMessageAuto();
+        //     this.addAutoMessage();
         // },
 
     }
